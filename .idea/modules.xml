@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/CommandMaps/CommandMaps.iml" filepath="$PROJECT_DIR$/CommandMaps/CommandMaps.iml" />
       <module fileurl="file://$PROJECT_DIR$/CommandMapsCompiler/CommandMapsCompiler.iml" filepath="$PROJECT_DIR$/CommandMapsCompiler/CommandMapsCompiler.iml" />
       <module fileurl="file://$PROJECT_DIR$/KotlinApp/KotlinApp.iml" filepath="$PROJECT_DIR$/KotlinApp/KotlinApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Playground.iml" filepath="$PROJECT_DIR$/Playground.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PlayGround.iml" filepath="$PROJECT_DIR$/PlayGround.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxtutorial/rxtutorial.iml" filepath="$PROJECT_DIR$/rxtutorial/rxtutorial.iml" />
     </modules>
