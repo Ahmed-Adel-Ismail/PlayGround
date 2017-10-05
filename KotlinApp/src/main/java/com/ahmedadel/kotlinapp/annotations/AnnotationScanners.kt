@@ -6,6 +6,5 @@ fun <T : Any, A : Annotation> T.findAnnotation(annotationClass: Class<A>, onComp
     val annotation = this::class
             .annotations
             .find { it.annotationClass.qualifiedName == annotationClass.name } as? A
-
     annotation?.let(onComplete)
 }
