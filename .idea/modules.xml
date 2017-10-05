@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CommandMaps/CommandMaps.iml" filepath="$PROJECT_DIR$/CommandMaps/CommandMaps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CommandMapsCompiler/CommandMapsCompiler.iml" filepath="$PROJECT_DIR$/CommandMapsCompiler/CommandMapsCompiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KotlinApp/KotlinApp.iml" filepath="$PROJECT_DIR$/KotlinApp/KotlinApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Playground.iml" filepath="$PROJECT_DIR$/Playground.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxtutorial/rxtutorial.iml" filepath="$PROJECT_DIR$/rxtutorial/rxtutorial.iml" />
+    </modules>
+  </component>
+</project>
