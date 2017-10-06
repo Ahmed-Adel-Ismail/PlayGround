@@ -4,9 +4,12 @@ import com.ahmedadel.kotlinapp.mocking.INVALID_USER_ID
 import com.ahmedadel.kotlinapp.mocking.PASSWORDS
 import com.ahmedadel.kotlinapp.mocking.USERS
 import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.experimental.async
+import kotlinx.coroutines.experimental.runBlocking
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import java.util.*
 import java.util.concurrent.CountDownLatch
 
 
@@ -46,9 +49,8 @@ class LoginViewModelTest {
         val viewModel = LoginViewModel()
         viewModel.userName.set(USERS.keys.first())
         viewModel.password.set(PASSWORDS[USERS[viewModel.userName.get()]])
-        viewModel.login(Schedulers.computation()) {
-            assertTrue(viewModel.progress.isTrue)
-        }
+        viewModel.login(Schedulers.computation())
+        assertTrue(viewModel.progress.isTrue)
     }
 
     @Test
@@ -63,33 +65,35 @@ class LoginViewModelTest {
         }
         countdownLatch.await()
     }
-}
 
-
-// short hand in if/else conditions :
-
-fun addPositiveNumbers(valueOne: Int, valueTwo: Int): Int =
-        if (valueOne >= 0 && valueTwo >= 0) valueOne + valueTwo
-        else -1
-
-fun addPositiveNumbersThenMultiply(valueOne: Int, valueTwo: Int): (Int) -> Int {
-    return if (valueOne >= 0 && valueTwo >= 0) {
-        { it * (valueOne + valueTwo) }
-    } else {
-        { -1 }
+    @Test
+    fun main() {
+        val startTime = System.currentTimeMillis()
+        runBlocking { printEvenNumbersAneThereTotal(1..1_000_000) }
+        val endTime = System.currentTimeMillis()
+        System.err.println("Millis to print and sum : " + (endTime - startTime))
     }
+
+    suspend private fun printEvenNumbersAneThereTotal(range: IntRange) {
+        (range).filter { it % 2 == 0 }
+                .map { async { it * 2 } }
+                .sumBy { it.await() }
+                .let { System.out.println("Result : $it") }
+    }
+
+    private fun jobOne() {
+        Thread.sleep(1000)
+        System.out.println("jobOne : " + Date())
+    }
+
+    private fun jobTwo() {
+        Thread.sleep(2000)
+        System.out.println("jobTwo : " + Date())
+    }
+
+
 }
 
 
-// callbacks for testing
 
-fun doStuffInBackground() = Thread(Runnable { Thread.sleep(3000) }).start()
-
-
-fun doStuffInBackgroundTest(testCallback: (() -> Unit)? = null) {
-    Thread(Runnable {
-        Thread.sleep(3000)
-        testCallback?.invoke()
-    }).start()
-}
 

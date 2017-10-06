@@ -50,6 +50,8 @@ dependencies {
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     compile "org.jetbrains.kotlin:kotlin-reflect:1.1.2-3"
+
+    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.19'
 }
 repositories {
     mavenCentral()
